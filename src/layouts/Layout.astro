@@ -1,50 +1,95 @@
 ---
-interface Props {
-	title: string;
-}
-
 const { title } = Astro.props;
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav>
+          <a href="/">Inicio</a>
+          <a href="/refugios">Refugios</a>
+          <a href="/formulario">Formulario</a>
+          <a href="/perfil">Perfil</a>
+          <a href="/salir" class="salir-btn">Salir</a>
+        </nav>
+      </header>
+      <main>
+        <slot />
+      </main>
+    </div>
+  </body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+
+<style>
+  :root {
+    --primary-color: #4591c4;
+    --secondary-color: #1c1c46;
+    --background-color: #ecf0f1;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  header {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  nav a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  nav a:hover {
+    color: var(--primary-color);
+  }
+
+  .salir-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+  }
+
+  .salir-btn:hover {
+    background-color: #546c7c;
+    color: white;
+  }
+
+  main {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 2rem;
+  }
 </style>

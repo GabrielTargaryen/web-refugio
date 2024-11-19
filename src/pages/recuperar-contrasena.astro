@@ -1,0 +1,87 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Recuperar Contraseña - Plataforma de Gestión de Refugios">
+  <div class="container">
+    <form id="recuperarContrasenaForm" class="form">
+      <h2>Recuperar Contraseña</h2>
+      <p class="instructions">Ingresa tu dirección de correo electrónico y te enviaremos instrucciones para restablecer tu contraseña.</p>
+      <div class="form-group">
+        <input type="email" id="email" name="email" placeholder="Tu dirección de correo electrónico" required>
+      </div>
+      <button type="submit" class="btn-submit">Enviar instrucciones</button>
+      <p class="login-link">¿Recordaste tu contraseña? <a href="/login">Volver al inicio de sesión</a></p>
+    </form>
+  </div>
+</Layout>
+
+<style>
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    padding: 2rem;
+  }
+
+  .form {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  .instructions {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #666;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  input[type="email"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+
+  .btn-submit {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-submit:hover {
+    background-color: #357ae8;
+  }
+
+  .login-link {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .login-link a {
+    color: #4285f4;
+    text-decoration: none;
+  }
+</style>
