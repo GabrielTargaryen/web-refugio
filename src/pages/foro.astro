@@ -1,0 +1,126 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Foro">
+  <div class="foro-container">
+    <h1>Foro de Refugios</h1>
+    <div class="nueva-pregunta">
+      <h2>Hacer una nueva pregunta</h2>
+      <form id="pregunta-form">
+        <input type="text" id="pregunta-titulo" placeholder="Título de tu pregunta" required>
+        <textarea id="pregunta-contenido" placeholder="Detalla tu pregunta aquí" required></textarea>
+        <button type="submit">Publicar Pregunta</button>
+      </form>
+    </div>
+    <div class="preguntas-lista">
+      <h2>Preguntas Recientes</h2>
+      <div id="preguntas-container">
+        <!-- Las preguntas se cargarán aquí dinámicamente -->
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .foro-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  h1, h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .nueva-pregunta {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input, textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  textarea {
+    height: 100px;
+    resize: vertical;
+  }
+
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+
+  .preguntas-lista {
+    margin-top: 30px;
+  }
+
+  .pregunta {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  .pregunta h3 {
+    margin-top: 0;
+    color: #2c3e50;
+  }
+
+  .pregunta-meta {
+    font-size: 0.9em;
+    color: #7f8c8d;
+    margin-bottom: 10px;
+  }
+
+  .comentarios {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+  }
+
+  .comentario {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+
+  .comentario-form {
+    margin-top: 15px;
+  }
+
+  .comentario-form input {
+    width: calc(100% - 100px);
+    margin-right: 10px;
+  }
+
+  .comentario-form button {
+    width: 90px;
+  }
+</style>
+
+<script>
+  // Datos de ejemplo (en una aplicación real, estos
