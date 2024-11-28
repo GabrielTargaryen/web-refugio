@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Menú Principal">
+  <nav class="navbar">
+    <div class="navbar-brand">Mi Aplicación de Refugios</div>
+    <div class="navbar-menu">
+      <a href="/refugios" class="navbar-item">Refugios</a>
+      <a href="/login" class="navbar-item" id="logout-btn">Salir</a>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <h1>Bienvenido al Menú Principal</h1>
+    <p>Aquí puedes acceder a todas las funciones de la aplicación.</p>
+  </main>
+</Layout>
+
+<style>
+  .navbar {
+    background-color: #4285F4;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .navbar-menu {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .navbar-item {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+
+  .navbar-item:hover {
+    background-color: #3367D6;
+  }
+
+  .main-content {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    color: #333;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const logoutBtn = document.getElementById('logout-btn');
+    logoutBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.location.href = '/login';
+    });
+  });
+</script>
